@@ -31,6 +31,11 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
+    @GetMapping("/dummy")
+    public ResponseEntity<String> dummyEndpoint() {
+        return ResponseEntity.ok().body("This is a dummy endpoint to test cicd");
+    }
+
     // Create /customers, HttpStatusCode: 201
     @PostMapping("")
     public ResponseEntity<Customer> createCustomer(@Valid @RequestBody Customer customer) {
